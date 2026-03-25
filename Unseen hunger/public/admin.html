@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unseen Hunger Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="admin-page">
+        <section class="admin-shell">
+            <div class="admin-header">
+                <div>
+                    <p class="eyebrow">Owner Admin</p>
+                    <h1>Feedback Dashboard</h1>
+                    <p class="admin-subtext">View feedback collected from the website. This page reads saved entries from the website backend.</p>
+                </div>
+                <div class="admin-actions">
+                    <a class="button button-secondary" href="index.html">Back To Site</a>
+                    <button class="button button-secondary" id="refresh-feedback" type="button">Refresh</button>
+                    <button class="button button-primary" id="logout-admin" type="button">Log Out</button>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <form class="admin-login" id="admin-login">
+                    <label for="admin-token">Admin token</label>
+                    <p class="admin-subtext">Use the token to load server feedback. Local browser-saved feedback can appear below even without unlocking.</p>
+                    <div class="admin-login-row">
+                        <input id="admin-token" type="password" placeholder="Enter owner token" required>
+                        <button class="button button-primary" type="submit">Unlock</button>
+                    </div>
+                    <div class="admin-inline-actions">
+                        <span id="admin-token-status">Token not saved yet.</span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="admin-summary">
+                <div class="mini-stat">
+                    <strong id="feedback-count">0</strong>
+                    <span>Total feedback entries</span>
+                </div>
+                <div class="mini-stat">
+                    <strong id="admin-status">Ready</strong>
+                    <span>Dashboard status</span>
+                </div>
+            </div>
+
+            <p class="admin-error" id="admin-error"></p>
+            <div class="feedback-list" id="feedback-list">
+                <div class="admin-card">
+                    <p class="admin-subtext">Unlock the dashboard to view feedback.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>
